@@ -1,0 +1,7 @@
+Report: Active Dependent Rules
+Query: SELECT ph_drq_rule.name,ph_drq_filter.single_constr,ph_sys_domain.name FROM ph_drq_rule JOIN ph_drq_filter ON ph_drq_rule.id = ph_drq_filter.rule_id LEFT JOIN ph_sys_domain ON ph_drq_rule.cust_org_id = ph_sys_domain.id WHERE ph_drq_filter.single_constr LIKE '%%PH_Rule%%' AND ph_drq_rule.active = true ORDER BY ph_drq_rule.name ASC LIMIT 500
+
+Results:
+psql:/tmp/cmdb_query.sql:1: ERROR:  syntax error at or near "AND"
+LINE 1: ...HERE ph_drq_filter.single_constr LIKE %%PH_Rule%% AND ph_drq...
+                                                             ^
